@@ -23,5 +23,3 @@ int main(int argc, char *argv[])
 
     //SDL_Surface * IMG_Load(const char *file)
 }
-
-//bonjours 
