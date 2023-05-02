@@ -14,6 +14,8 @@ Le jeu sera quant à lui géré par le fichier game.c
 */
 int main(int argc, char *argv[])
 {
+    printf("bonjour");
     printf("cacaprout");//cacaprout doit s afficher
 }
 
+//bonjours 
