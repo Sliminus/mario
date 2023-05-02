@@ -14,8 +14,14 @@ Le jeu sera quant à lui géré par le fichier game.c
 */
 int main(int argc, char *argv[])
 {
-    printf("bonjour");
-    printf("cacaprout");//cacaprout doit s afficher
+    if(SDL_Init(SDL_INIT_VIDEO)==NULL)
+    {
+        perror("erreur");
+        SDL_QUIT();
+    }
+
+
+    //SDL_Surface * IMG_Load(const char *file)
 }
 
 //bonjours 
