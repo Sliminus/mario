@@ -19,19 +19,25 @@ int main(int argc, char *argv[])
         printf("Erreur : %s",SDL_GetError());
         return EXIT_FAILURE;
     }
+    
     if((window = SDL_CreateWindow("mario", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,640, 480, SDL_WINDOW_SHOWN))== NULL)
     {
         printf("Erreur : %s",SDL_GetError());
         return EXIT_FAILURE;
     }
-    if((renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE))== NULL)
+    
+    if((renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED))== NULL)
     {
         printf("Erreur : %s",SDL_GetError());
         return EXIT_FAILURE;
     }
-    
-    //SDL_Texture* SDL_CreateTexture(SDL_Renderer* renderer, Uint32 format, int access, int w, int h)
-
-
-    //SDL_Surface * IMG_Load(const char *file)
+    SDL_RendererClear();
+    image = loadImage(const char path[],renderer);
+    SDL_RendererCopy(renderer,image,640,480);
+    SDL_RendererPresent();
+    SDL_Delay(1000000);
+    SDL_DestroyTexture(image);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
 }
