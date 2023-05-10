@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "file.h"
 #include "game.h"
+#include "event.h"
 
 //ligne de compilation gcc main.c file.c game.c event.c charactere.c -o mario -lSDL2main -lSDL2_image -lSDL2
 
