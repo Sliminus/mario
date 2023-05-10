@@ -33,11 +33,11 @@ int main(int argc, char *argv[])
     SDL_RenderClear(renderer);
     SDL_Texture* image = NULL;
     image = loadImage("img/menu.jpg",renderer);
-    SDL_Rect* dimension = NULL;
-    SDL_Rect dimension = {600,600,640,480};
-    SDL_RenderCopy(renderer,image,dimension,dimension);
+    SDL_Rect srcrect = {0,0,600,600};
+    SDL_Rect dstrect = {0,0,640,480};
+    SDL_RenderCopy(renderer,image,&srcrect,&dstrect);
     SDL_RenderPresent(renderer);
-    SDL_Delay(1000000);
+    SDL_Delay(10000);
     SDL_DestroyTexture(image);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
