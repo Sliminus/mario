@@ -19,22 +19,23 @@ int main(int argc, char *argv[])
         printf("Erreur : %s",SDL_GetError());
         return EXIT_FAILURE;
     }
-    
+    SDL_Window* window = NULL;
     if((window = SDL_CreateWindow("mario", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,640, 480, SDL_WINDOW_SHOWN))== NULL)
     {
         printf("Erreur : %s",SDL_GetError());
         return EXIT_FAILURE;
     }
-    
+    SDL_Renderer* renderer = NULL;
     if((renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED))== NULL)
     {
         printf("Erreur : %s",SDL_GetError());
         return EXIT_FAILURE;
     }
-    SDL_RendererClear();
+    SDL_RenderClear();
+    SDL_Image* image = NULL;
     image = loadImage(const char path[],renderer);
     SDL_RendererCopy(renderer,image,640,480);
-    SDL_RendererPresent();
+    SDL_RenderPresent();
     SDL_Delay(1000000);
     SDL_DestroyTexture(image);
     SDL_DestroyRenderer(renderer);
