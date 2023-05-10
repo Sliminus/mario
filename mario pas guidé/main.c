@@ -2,7 +2,6 @@
 #include <SDL2/SDL_image.h>
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "file.h"
 #include "game.h"
 
@@ -33,7 +32,7 @@ int main(int argc, char *argv[])
     }
     SDL_RenderClear(renderer);
     SDL_Texture* image = NULL;
-    image = loadImage(/img/menu.jpg,renderer);
+    image = loadImage("img/menu.jpg",renderer);
     SDL_RenderCopy(renderer,image,640,480);
     SDL_RenderPresent(renderer);
     SDL_Delay(1000000);
