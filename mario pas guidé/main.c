@@ -19,6 +19,12 @@ int main(int argc, char *argv[])
         perror("erreur");
         SDL_QUIT();
     }
+     if((window = SDL_CreateWindow("mario", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,640, 480, SDL_WINDOW_SHOWN))== NULL)
+    {
+        perror("erreur");
+        SDL_QUIT();
+    }
+    
     //SDL_Window* SDL_CreateWindow(const char* title, int x, int y, int w, int h, Uint32 flags)
     //SDL_Renderer* SDL_CreateRenderer(SDL_Window* window, int index, Uint32 flags)
     //SDL_Texture* SDL_CreateTexture(SDL_Renderer* renderer, Uint32 format, int access, int w, int h)
