@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     SDL_Rect dstrect = {0,0,640,480};
     SDL_RenderCopy(renderer,image,&srcrect,&dstrect);
     SDL_RenderPresent(renderer);
-    SDL_Delay(10000);
+    event();
     SDL_DestroyTexture(image);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
