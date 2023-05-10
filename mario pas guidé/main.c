@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
         printf("Erreur : %s",SDL_GetError());
         return EXIT_FAILURE;
     }
-    SDL_RenderClear();
+    SDL_RenderClear(renderer);
     SDL_Image* image = NULL;
     image = loadImage(const char path[],renderer);
-    SDL_RendererCopy(renderer,image,640,480);
-    SDL_RenderPresent();
+    SDL_RenderCopy(renderer,image,640,480);
+    SDL_RenderPresent(renderer);
     SDL_Delay(1000000);
     SDL_DestroyTexture(image);
     SDL_DestroyRenderer(renderer);
