@@ -12,7 +12,7 @@ Le fichier va contenir l'écran d'introduction et va ensuite permettre de bascul
 Le jeu sera quant à lui géré par le fichier game.c
 */
 int main(int argc, char *argv[])
-{
+{   
     if(SDL_Init(SDL_INIT_VIDEO)== -1)
     {
         printf("Erreur : %s",SDL_GetError());
