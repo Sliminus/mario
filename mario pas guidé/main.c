@@ -32,8 +32,8 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
     SDL_RenderClear(renderer);
-    SDL_Image* image = NULL;
-    image = loadImage(const char path[],renderer);
+    SDL_Texture* image = NULL;
+    image = loadImage(/img/menu.jpg,renderer);
     SDL_RenderCopy(renderer,image,640,480);
     SDL_RenderPresent(renderer);
     SDL_Delay(1000000);
