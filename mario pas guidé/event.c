@@ -6,9 +6,12 @@ void event()
     while(quit)
     {
         while(SDL_PollEvent(&event))
-        if(event.type == SDL_QUIT)
         {
-            quit = 0;
-        }
+            if(event.type == SDL_QUIT)
+            {
+                quit = 0;
+                break;
+            }
+        }   
     }
 }
