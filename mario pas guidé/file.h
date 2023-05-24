@@ -13,6 +13,9 @@ et la map.
     #define LARGEUR_FENETRE 1200 //taille de la fenetre
     #define HAUTEUR_FENETRE 1200 //taille de la fenetre
 
+    
+    
+    
     typedef struct Map Map;
     struct Map
     {
@@ -21,6 +24,9 @@ et la map.
         int xscroll,yscroll; //contient les données de combien on a scrollé dans les 2 directions pour bien faire bouger la map
     };
 
+    
+    
+    
     typedef struct Sprites Sprites;
     struct Sprites
     {

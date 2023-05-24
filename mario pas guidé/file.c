@@ -37,6 +37,22 @@ SDL_Texture *loadImage(const char path[], SDL_Renderer *renderer)
     return texture;
 }
 
+void CreerMap(Map* map, Sprites* sprites)
+{
+    buffer[20];
+    FILE* fichier = NULL;
+    fichier = fopen("level/niveau0.lvl","r");
+
+    if(fichier == NULL)
+    {
+        printf("erreur ouverture fichier")
+        exit(1);
+    }
+    fgets(buffer,20,fichier);
+}
+
+
+
 void LibererMap(Map* map, Sprites* sprites)
 {
    
