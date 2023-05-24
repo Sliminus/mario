@@ -7,8 +7,11 @@
 int jouer(SDL_Renderer *renderer) {
     SDL_Event event;
     int quit = 1;
+
+    SDL_SetRenderDrawColor(renderer, 255,255,255,255);
     while(quit)
     {
+        SDL_RenderClear(renderer);
         while(SDL_PollEvent(&event))
         {
             if(event.type == SDL_QUIT)
@@ -17,6 +20,8 @@ int jouer(SDL_Renderer *renderer) {
                 break;
             }
         }   
+
+        SDL_RenderPresent(renderer);
     }
 
     return 0;
