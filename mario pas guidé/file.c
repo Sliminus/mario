@@ -39,13 +39,13 @@ SDL_Texture *loadImage(const char path[], SDL_Renderer *renderer)
 
 void CreerMap(Map* map, Sprites* sprites)
 {
-    buffer[20];
+    int buffer[20];
     FILE* fichier = NULL;
     fichier = fopen("level/niveau0.lvl","r");
 
     if(fichier == NULL)
     {
-        printf("erreur ouverture fichier")
+        printf("erreur ouverture fichier");
         exit(1);
     }
     fgets(buffer,20,fichier);
@@ -53,7 +53,4 @@ void CreerMap(Map* map, Sprites* sprites)
 
 
 
-void LibererMap(Map* map, Sprites* sprites)
-{
-   
-}
+void LibererMap(Map* map, Sprites* sprites);
