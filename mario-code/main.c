@@ -39,7 +39,28 @@ int main(int argc, char *argv[])
     SDL_RenderCopy(renderer,image,&srcrect,&dstrect);
     SDL_RenderPresent(renderer);
 
-    jouer(renderer);
+    SDL_Event event;
+    int quit = 1;
+
+    while(quit)
+    {
+        while(SDL_PollEvent(&event))
+        {
+            if(event.type == SDL_KEYDOWN)
+            {
+                if(event.key.keysym.scancode == SDL_SCANCODE_1)
+                {
+                    quit = jouer(renderer);
+                    break;
+                }
+            }
+            if(event.type == SDL_QUIT)
+            {
+                quit = 0;
+                break;
+            }
+        }
+    }
 
     SDL_DestroyTexture(image);
     SDL_DestroyRenderer(renderer);
