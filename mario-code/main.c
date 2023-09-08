@@ -14,7 +14,6 @@ Le jeu sera quant à lui géré par le fichier game.c
 */
 int main(int argc, char *argv[])
 {   
-    //test
     if(SDL_Init(SDL_INIT_VIDEO)== -1)
     {
         printf("Erreur : %s",SDL_GetError());
