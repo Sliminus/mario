@@ -38,12 +38,7 @@ int main(int argc, char *argv[])
     SDL_Rect dstrect = {0,0,LARGEUR_FENETRE,HAUTEUR_FENETRE};
     SDL_RenderCopy(renderer,image,&srcrect,&dstrect);
     SDL_RenderPresent(renderer);
-    SDL_Surface* image = IMG_Load("Mario1.png");
-    if(!image)
-    {
-        printf("Erreur de chargement de l'image : %s",SDL_GetError());
-        return -1;
-    }   
+  
 
     SDL_Event event;
     int quit = 1;
