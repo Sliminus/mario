@@ -37,18 +37,22 @@ SDL_Texture *loadImage(const char path[], SDL_Renderer *renderer)
     return texture;
 }
 
+void loadSprites(SDL_Renderer *renderer)
+{
+    char nom[][10]={"block","boite","fin1","fin2","sky","sol","tuyau1","tuyau2","tuyau3","tuyau4"};
+    char png[][30]={"img/block.png","img/boite.png","img/fin1.png","img/fin2.png","img/sky.png","img/sol.png","img/tuyau1.png","img/tuyau2.png","img/tuyau3.png","img/tuyau4.png"};
+    int trav[]={1,1,0,0,0,1,1,1,1};
+    for(int i=0;i<10;i++)
+    {
+        Sprites *nom[i]=malloc(sizeof(nom[i]));
+        nom[i]->sprite=loadImage(png[i],renderer);
+        nom[i]->traverser=trav[i];
+    }
+}
+
 void CreerMap(Map* map, Sprites* sprites)
 {
-    int buffer[20];
-    FILE* fichier = NULL;
-    fichier = fopen("level/niveau0.lvl","r");
 
-    if(fichier == NULL)
-    {
-        printf("erreur ouverture fichier");
-        exit(1);
-    }
-    fgets(buffer,20,fichier);
 }
 
 
