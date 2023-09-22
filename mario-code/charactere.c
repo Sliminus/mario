@@ -7,7 +7,7 @@
 
 void creerPersonnage(Personnage* mario) {
     Personnage *mario = malloc(sizeof(Personnage));
-    mario->image=malloc(sizeof(SDL_Texture** *NUMBER_IMAGE_MARIO));
+    mario->image=malloc(sizeof(SDL_Texture*)*NUMBER_IMAGE_MARIO);
     mario->position.x=0;
     mario->position.y=0;
     mario->position.w=WIDTH_MARIO;
