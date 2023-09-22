@@ -65,7 +65,7 @@ void CreerMap(Map* map, Sprites* sprites)
     int var1,var2;
     fscanf(fd,"%d %d",var1,var2);
     map->width=var1;
-    map->height=var1;
+    map->height=var2;
 
     map->LoadedMap=malloc(sizeof(int)*var1);
     for(int i=0;i<var1;i++)
