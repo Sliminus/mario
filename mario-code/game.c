@@ -12,8 +12,8 @@ int jouer(SDL_Renderer *renderer) {
     Personnage *mario = malloc(sizeof(Personnage));
 
     Map *map = malloc(sizeof(Map));
-    Sprites *sprite[10]=malloc(sizeof(Sprites));
-    
+    //Sprites *sprite[10]=malloc(sizeof(Sprites));
+
     CreerMap(map);
 
     creerPersonnage(mario,map);
