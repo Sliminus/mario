@@ -37,7 +37,7 @@ SDL_Texture *loadImage(const char path[], SDL_Renderer *renderer)
     return texture;
 }
 
-void loadSprites(SDL_Renderer *renderer)
+void loadSprites(SDL_Renderer *renderer, Sprites* sprites)
 {
     Sprites *sprite[10]=malloc(sizeof(sprite));
     char png[][30]={"img/sky.png","img/sol.png","img/block.png","img/boite.png","img/tuyau1.png","img/tuyau2.png","img/tuyau3.png","img/tuyau4.png","img/fin1.png","img/fin2.png"};
@@ -51,7 +51,7 @@ void loadSprites(SDL_Renderer *renderer)
 }
 
 
-void CreerMap(Map* map, Sprites* sprites)
+void CreerMap(Map* map)
 {
     char nom[25];
     FILE* fd=NULL;
@@ -80,6 +80,7 @@ void CreerMap(Map* map, Sprites* sprites)
             fscanf(fd,"%d",map->LoadedMap[i][j]);
         }
     }
+    free(fd);
 
 }
 
@@ -87,8 +88,6 @@ void CreerMap(Map* map, Sprites* sprites)
 
 void LibererMap(Map* map, Sprites* sprites)
 {
-    for(int i=0;i<10;i++)
-    {
-        //free(sprites[i]);
-    }
+    free(sprites);
+    free(map);    
 }
