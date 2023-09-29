@@ -10,7 +10,12 @@ int jouer(SDL_Renderer *renderer) {
 
     SDL_SetRenderDrawColor(renderer, 255,255,255,255);
     Personnage *mario = malloc(sizeof(Personnage));
+
     Map *map = malloc(sizeof(Map));
+    Sprites *sprite[10]=malloc(sizeof(Sprites));
+    
+    CreerMap(map);
+
     creerPersonnage(mario,map);
     while(quit)
     {
@@ -27,5 +32,5 @@ int jouer(SDL_Renderer *renderer) {
         SDL_RenderPresent(renderer);
     }
 
-    freePersonnage(mario)
+    freePersonnage(mario);
 }
