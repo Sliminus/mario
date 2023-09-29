@@ -1,11 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "charactere.h"
- #define WIDTH_MARIO 30 
-#define HEIGHT_MARIO 40 
-#define NUMBER_IMAGE_MARIO 6 
 
-void creerPersonnage(Personnage* mario) {
+void creerPersonnage(Personnage* mario,Map* map) {
     Personnage *mario = malloc(sizeof(Personnage));
     mario->image=malloc(sizeof(SDL_Texture*)*NUMBER_IMAGE_MARIO);
     mario->position.x=0;
@@ -17,7 +14,7 @@ void creerPersonnage(Personnage* mario) {
     mario->gravite=0;
     mario->direction=0;
     mario->dernieredirection=0;
-    mario->temp;
+    mario->temp=0;
     mario->win=0;
     mario->lvl;
     
