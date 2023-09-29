@@ -1,6 +1,6 @@
 /*
 Contient la création du charactère (mario) et les divers caractéristique qui le compose, pareil pour les monstres.
-Va aussi gérer l'affichage des personnages et mosntres. 
+Va aussi gérer l'affichage des personnages et monstres. 
 Attention la map doit déjà être chargé avant de créer un charactère. 
 */
 
@@ -30,5 +30,6 @@ Attention la map doit déjà être chargé avant de créer un charactère.
     };
 
     void freePersonnage(Personnage* mario, Personnage **goomba, int nbGoomba);
+    void creerPersonnage(Personnage* mario,Map* map);
     
 #endif
