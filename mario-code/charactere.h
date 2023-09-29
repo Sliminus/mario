@@ -29,7 +29,7 @@ Attention la map doit déjà être chargé avant de créer un charactère.
         int lvl, lvlperdu;
     };
 
-    void freePersonnage(Personnage* mario, Personnage **goomba, int nbGoomba);
+    void freePersonnage(Personnage* mario);
     void creerPersonnage(Personnage* mario,Map* map);
     
 #endif

@@ -19,6 +19,7 @@ void creerPersonnage(Personnage* mario,Map* map) {
     mario->lvl;
     
 }
-void freePersonnage(Personnage* mario, Personnage **goomba, int nbGoomba) {
+void freePersonnage(Personnage* mario) {
     free(mario);
 }
+/*Personnage **goomba, int nbGoomba*/
