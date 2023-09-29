@@ -27,5 +27,5 @@ int jouer(SDL_Renderer *renderer) {
         SDL_RenderPresent(renderer);
     }
 
-    freePersonnage(mario)
+    freePersonnage(mario);
 }
