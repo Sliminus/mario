@@ -29,7 +29,7 @@ int jouer(SDL_Renderer *renderer) {
                 break;
             }
         }   
-
+        AfficherMap(map,sprites,renderer);
         SDL_RenderPresent(renderer);
     }
 

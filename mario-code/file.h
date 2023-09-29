@@ -38,5 +38,6 @@ et la map.
     void LibererMap(Map* map, Sprites* sprites);
     void loadSprites(SDL_Renderer *renderer, Sprites* sprites);
     void CreerMap(Map* map);
+    void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer);
 
 #endif
