@@ -3,7 +3,6 @@
 #include "charactere.h"
 
 void creerPersonnage(Personnage* mario,Map* map) {
-    Personnage *mario = malloc(sizeof(Personnage));
     mario->image=malloc(sizeof(SDL_Texture*)*NUMBER_IMAGE_MARIO);
     mario->position.x=0;
     mario->position.y=0;
