@@ -2,8 +2,14 @@
 #include <stdio.h>
 #include "charactere.h"
 
-void creerPersonnage(Personnage* mario,Map* map) {
+void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
     mario->image=malloc(sizeof(SDL_Texture*)*NUMBER_IMAGE_MARIO);
+    mario->image[0]=loadImage("img/mario1.png",renderer);
+    mario->image[1]=loadImage("img/mario2.png",renderer);
+    mario->image[2]=loadImage("img/mario3.png",renderer);
+    mario->image[3]=loadImage("img/mario4.png",renderer);
+    mario->image[4]=loadImage("img/mario5.png",renderer);
+    mario->image[5]=loadImage("img/mario6.png",renderer);
     mario->position.x=0;
     mario->position.y=0;
     mario->position.w=WIDTH_MARIO;
