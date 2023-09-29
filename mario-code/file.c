@@ -37,20 +37,57 @@ SDL_Texture *loadImage(const char path[], SDL_Renderer *renderer)
     return texture;
 }
 
-void CreerMap(Map* map, Sprites* sprites)
+void loadSprites(SDL_Renderer *renderer, Sprites* sprites)
 {
-    int buffer[20];
-    FILE* fichier = NULL;
-    fichier = fopen("level/niveau0.lvl","r");
-
-    if(fichier == NULL)
+    Sprites *sprite[10]=malloc(sizeof(sprite));
+    char png[][30]={"img/sky.png","img/sol.png","img/block.png","img/boite.png","img/tuyau1.png","img/tuyau2.png","img/tuyau3.png","img/tuyau4.png","img/fin1.png","img/fin2.png"};
+    int trav[]={0,1,1,1,1,1,1,0,0};
+    for(int i=0;i<10;i++)
     {
-        printf("erreur ouverture fichier");
-        exit(1);
+        sprite[i]->sprite=loadImage(png[i],renderer);
+        sprite[i]->traverser=trav[i];
     }
-    fgets(buffer,20,fichier);
+
+}
+
+
+void CreerMap(Map* map)
+{
+    char nom[25];
+    FILE* fd=NULL;
+    fd = fopen("niveau0.lvl","r");
+    if(fd==NULL)
+    {
+        perror("fichier niveau 0 erreur :");
+        return EXIT_FAILURE;
+    }
+    fgets(nom,25,fd);
+    int var1,var2;
+    fscanf(fd,"%d %d",var1,var2);
+    map->width=var1;
+    map->height=var2;
+
+    map->LoadedMap=malloc(sizeof(int)*var1);
+    for(int i=0;i<var1;i++)
+    {
+        map->LoadedMap=malloc(sizeof(int)*var2);
+    }
+
+    for(int i=0;i<var1;i++)
+    {
+        for(int j=0;j<var2;j++)
+        {
+            fscanf(fd,"%d",map->LoadedMap[i][j]);
+        }
+    }
+    free(fd);
+
 }
 
 
 
-void LibererMap(Map* map, Sprites* sprites);
+void LibererMap(Map* map, Sprites* sprites)
+{
+    free(sprites);
+    free(map);    
+}

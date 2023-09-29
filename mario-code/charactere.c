@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-
 #include "charactere.h"
 
 void creerPersonnage(Personnage* mario,Map* map) {

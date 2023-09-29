@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
     SDL_Window* window = NULL;
-    if((window = SDL_CreateWindow("mario", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,640, 480, SDL_WINDOW_SHOWN))== NULL)
+    if((window = SDL_CreateWindow("mario", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,LARGEUR_FENETRE, HAUTEUR_FENETRE, SDL_WINDOW_SHOWN))== NULL)
     {
         printf("Erreur : %s",SDL_GetError());
         return EXIT_FAILURE;
@@ -34,10 +34,11 @@ int main(int argc, char *argv[])
     SDL_RenderClear(renderer);
     SDL_Texture* image = NULL;
     image = loadImage("img/menu.jpg",renderer);
-    SDL_Rect srcrect = {0,0,600,600};
-    SDL_Rect dstrect = {0,0,640,480};
+    SDL_Rect srcrect = {0,0,LARGEUR_FENETRE,HAUTEUR_FENETRE};
+    SDL_Rect dstrect = {0,0,LARGEUR_FENETRE,HAUTEUR_FENETRE};
     SDL_RenderCopy(renderer,image,&srcrect,&dstrect);
     SDL_RenderPresent(renderer);
+  
 
     SDL_Event event;
     int quit = 1;
