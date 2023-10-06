@@ -27,4 +27,5 @@ void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
 void freePersonnage(Personnage* mario) {
     free(mario);
 }
+
 /*Personnage **goomba, int nbGoomba*/
