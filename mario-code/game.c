@@ -23,12 +23,30 @@ int jouer(SDL_Renderer *renderer) {
         SDL_RenderClear(renderer);
         while(SDL_PollEvent(&event))
         {
+            if(event.type == SDL_KEYDOWN)
+            {
+                if(event.key.keysym.scancode == SDLK_LEFT)
+                {
+                  mario->direction=2;
+                  
+                }
+            }
+    
+            if(event.type == SDL_KEYDOWN)
+            {
+                if(event.key.keysym.scancode == SDLK_RIGHT)
+                {
+                  mario->direction=1;
+                }
+            }
+
             if(event.type == SDL_QUIT)
             {
                 quit = 0;
                 break;
             }
-        }   
+        }
+        afficherMario(mario);   
         AfficherMap(map,sprites,renderer);
         SDL_RenderPresent(renderer);
     }
