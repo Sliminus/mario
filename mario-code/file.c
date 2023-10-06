@@ -85,6 +85,7 @@ void CreerMap(Map* map)
 
 }
 
+
 void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer)
 {
     for(int i=0;i<30;i++)
