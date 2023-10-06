@@ -15,7 +15,7 @@ int jouer(SDL_Renderer *renderer) {
     Sprites *sprites=malloc(sizeof(Sprites)*10);
 
     loadSprites(renderer, sprites);
-    //CreerMap(map);
+    CreerMap(map);
 
     //creerPersonnage(mario,map);
     while(quit)
@@ -29,7 +29,7 @@ int jouer(SDL_Renderer *renderer) {
                 break;
             }
         }   
-        //AfficherMap(map,sprites,renderer);
+        AfficherMap(map,sprites,renderer);
         SDL_RenderPresent(renderer);
     }
 
