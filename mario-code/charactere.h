@@ -30,6 +30,6 @@ Attention la map doit déjà être chargé avant de créer un charactère.
     };
 
     void freePersonnage(Personnage* mario);
-    void creerPersonnage(Personnage* mario,Map* map);
+    void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer);
     
 #endif

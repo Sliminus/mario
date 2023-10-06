@@ -62,7 +62,7 @@ void CreerMap(Map* map)
     }
     fgets(nom,25,fd);
     int var1,var2;
-    fscanf(fd,"%d %d",var1,var2);
+    fscanf(fd,"%d %d",&var1,&var2);
     map->width=var1;
     map->height=var2;
 
@@ -76,7 +76,7 @@ void CreerMap(Map* map)
     {
         for(int j=0;j<var2;j++)
         {
-            fscanf(fd,"%d",map->LoadedMap[i][j]);
+            fscanf(fd,"%d",&(map->LoadedMap[i][j]));
         }
     }
     map->xscroll=0;
