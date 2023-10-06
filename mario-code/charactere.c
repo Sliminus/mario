@@ -24,25 +24,9 @@ void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
     mario->lvl;
     
 }
-void afficherMario(Personnage* mario,SDL_Rect* position,int direction)
+void afficherMario(Personnage* mario,SDL_Rect* position)
 {
-    SDL_Event event;
-    if(event.type == SDL_KEYDOWN)
-            {
-                if(event.key.keysym.scancode == SDLK_LEFT)
-                {
-                  direction=2;
-                  
-                }
-            }
-    
-    if(event.type == SDL_KEYDOWN)
-            {
-                if(event.key.keysym.scancode == SDLK_RIGHT)
-                {
-                  direction=1;
-                }
-            }
+ 
 }
 void freePersonnage(Personnage* mario) {
     free(mario);
