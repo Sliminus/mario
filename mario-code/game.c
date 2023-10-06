@@ -27,11 +27,9 @@ int jouer(SDL_Renderer *renderer) {
             {
                 if(event.key.keysym.scancode == SDLK_LEFT)
                 {
-                  mario->direction=2;
-                  
+                  mario->direction=2; 
                 }
             }
-    
             if(event.type == SDL_KEYDOWN)
             {
                 if(event.key.keysym.scancode == SDLK_RIGHT)
@@ -50,7 +48,6 @@ int jouer(SDL_Renderer *renderer) {
         afficherMario(mario,renderer); 
         SDL_RenderPresent(renderer);
     }
-
     LibererMap(map,sprites);
     freePersonnage(mario);
 }
