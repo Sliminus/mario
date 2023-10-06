@@ -66,10 +66,10 @@ void CreerMap(Map* map)
     map->width=var1;
     map->height=var2;
 
-    map->LoadedMap=malloc(sizeof(int)*var1);
+    map->LoadedMap=malloc(sizeof(int*)*var1);
     for(int i=0;i<var1;i++)
     {
-        map->LoadedMap=malloc(sizeof(int)*var2);
+        map->LoadedMap[i]=malloc(sizeof(int*)*var2);
     }
 
     for(int i=0;i<var1;i++)
@@ -105,5 +105,10 @@ void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer)
 void LibererMap(Map* map, Sprites* sprites)
 {
     free(sprites);
+    for(int i=0;i<(map->width);i++)
+    {
+        free(map->LoadedMap[i]);
+    }
+    free(map->LoadedMap);
     free(map);    
 }
