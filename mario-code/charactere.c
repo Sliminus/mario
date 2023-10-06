@@ -30,7 +30,8 @@ void afficherMario(Personnage* mario,SDL_Rect* position,int direction)
             {
                 if(event.key.keysym.scancode == SDLK_LEFT)
                 {
-                  int direction=2;
+                  direction=2;
+                  
                 }
             }
     
