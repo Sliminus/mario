@@ -24,9 +24,21 @@ void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
     mario->lvl;
     
 }
-void afficherMario(Personnage* mario,SDL_Rect* position)
+void afficherMario(Personnage* mario,SDL_Renderer* renderer)
 {
- 
+    SDL_Rect srcrect = {0,0,WIDTH_MARIO,HEIGHT_MARIO};
+    if(mario->direction==0)
+    {
+        SDL_RenderCopy(renderer,mario->image[0],&srcrect,&mario->position);
+    }
+       if(mario->direction==1)
+    {
+        SDL_RenderCopy(renderer,mario->image[1],&srcrect,&mario->position);
+    }
+       if(mario->direction==2)
+    {
+        SDL_RenderCopy(renderer,mario->image[5],&srcrect,&mario->position);
+    }
 }
 void freePersonnage(Personnage* mario) {
     free(mario);

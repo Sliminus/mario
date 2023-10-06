@@ -17,7 +17,7 @@ int jouer(SDL_Renderer *renderer) {
     loadSprites(renderer, sprites);
     CreerMap(map);
 
-    //creerPersonnage(mario,map);
+    creerPersonnage(mario,map,renderer);
     while(quit)
     {
         SDL_RenderClear(renderer);
@@ -46,7 +46,7 @@ int jouer(SDL_Renderer *renderer) {
                 break;
             }
         }
-        afficherMario(mario);   
+        afficherMario(mario,renderer);   
         AfficherMap(map,sprites,renderer);
         SDL_RenderPresent(renderer);
     }
