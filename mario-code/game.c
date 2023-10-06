@@ -45,9 +45,9 @@ int jouer(SDL_Renderer *renderer) {
                 quit = 0;
                 break;
             }
-        }
-        afficherMario(mario,renderer);   
+        }  
         AfficherMap(map,sprites,renderer);
+        afficherMario(mario,renderer); 
         SDL_RenderPresent(renderer);
     }
 
