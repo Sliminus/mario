@@ -9,9 +9,9 @@ et la map.
     #include <SDL2/SDL.h>
 
     #define NbSprites 10 // À modifier si on ajouter des sprites
-    #define Size_Sprite 40 // A modifier si on change taille sprite
-    #define LARGEUR_FENETRE 1200 //taille de la fenetre
-    #define HAUTEUR_FENETRE 1200 //taille de la fenetre
+    #define Size_Sprite 32 // A modifier si on change taille sprite
+    #define LARGEUR_FENETRE 960 //taille de la fenetre
+    #define HAUTEUR_FENETRE 960 //taille de la fenetre
 
     
     
