@@ -77,6 +77,7 @@ void CreerMap(Map* map)
         for(int j=0;j<var2;j++)
         {
             fscanf(fd,"%d",&(map->LoadedMap[i][j]));
+            SDL_Log("i=%d j=%d %d",i,j,map->LoadedMap[i][j]);
         }
     }
     map->xscroll=0;
@@ -93,7 +94,7 @@ void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer)
         for(int j=0;j<30;j++)
         {
             SDL_Rect srcrect = {0,0,Size_Sprite,Size_Sprite};
-            SDL_Rect dstrect = {Size_Sprite*j,Size_Sprite*i,Size_Sprite,Size_Sprite};
+            SDL_Rect dstrect = {Size_Sprite_dest*j,Size_Sprite_dest*i,Size_Sprite_dest,Size_Sprite_dest};
             SDL_RenderCopy(renderer,sprites[map->LoadedMap[i+map->xscroll][j+map->yscroll]].sprite,&srcrect,&dstrect);
         }
     }
