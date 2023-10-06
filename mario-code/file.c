@@ -54,11 +54,11 @@ void CreerMap(Map* map)
 {
     char nom[25];
     FILE* fd=NULL;
-    fd = fopen("niveau0.lvl","r");
+    fd = fopen("level/niveau0.lvl","r");
     if(fd==NULL)
     {
         perror("fichier niveau 0 erreur :");
-        return EXIT_FAILURE;
+        EXIT_FAILURE;
     }
     fgets(nom,25,fd);
     int var1,var2;
@@ -79,19 +79,25 @@ void CreerMap(Map* map)
             fscanf(fd,"%d",map->LoadedMap[i][j]);
         }
     }
+    map->xscroll=0;
+    map->yscroll=0;
     free(fd);
 
 }
 
-void AfficherMap(Map* map, Sprites* sprites)
+
+void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer)
 {
     for(int i=0;i<30;i++)
     {
         for(int j=0;j<30;j++)
         {
-            map->LoadedMap[i+map->xscroll][j+map->yscroll];
+            SDL_Rect srcrect = {0,0,LARGEUR_FENETRE,HAUTEUR_FENETRE};
+            SDL_Rect dstrect = {0,0,LARGEUR_FENETRE,HAUTEUR_FENETRE};
+            SDL_RenderCopy(renderer,sprites[map->LoadedMap[i+map->xscroll][j+map->yscroll]].sprite,&srcrect,&dstrect);
         }
     }
+    SDL_RenderPresent(renderer);
 }
 
 
