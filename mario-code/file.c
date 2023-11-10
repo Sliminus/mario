@@ -106,6 +106,10 @@ void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer)
 
 void LibererMap(Map* map, Sprites* sprites)
 {
+    for(int i=0;i=11;i++)
+    {
+        SDL_DestroyTexture(sprites[i].sprite);
+    }
     free(sprites);
     for(int i=0;i<(map->height);i++)
     {
