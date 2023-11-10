@@ -35,6 +35,7 @@ int jouer(SDL_Renderer *renderer) {
                   mario->direction=1;
                   seDeplacer(mario);
                 }
+
             }
             if(event.type == SDL_QUIT)
             {
