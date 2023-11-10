@@ -17,22 +17,37 @@ int jouer(SDL_Renderer *renderer) {
     loadSprites(renderer, sprites);
     CreerMap(map);
 
-    //creerPersonnage(mario,map);
+    creerPersonnage(mario,map,renderer);
     while(quit)
     {
         SDL_RenderClear(renderer);
         while(SDL_PollEvent(&event))
         {
+            if(event.type == SDL_KEYDOWN)
+            {
+                if(event.key.keysym.scancode == SDLK_LEFT)
+                {
+                  mario->direction=2; 
+                }
+            }
+            if(event.type == SDL_KEYDOWN)
+            {
+                if(event.key.keysym.scancode == SDLK_RIGHT)
+                {
+                  mario->direction=1;
+                }
+            }
+
             if(event.type == SDL_QUIT)
             {
                 quit = 0;
                 break;
             }
-        }   
+        }  
         AfficherMap(map,sprites,renderer);
+        afficherMario(mario,renderer); 
         SDL_RenderPresent(renderer);
     }
-
     LibererMap(map,sprites);
     freePersonnage(mario);
 }
