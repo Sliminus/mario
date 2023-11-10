@@ -1,20 +1,18 @@
 #include "event.h"
 
-void seDeplacer(Personnage *personnage)
+void seDeplacerDroite(Personnage *personnage)
 {
-    switch (personnage->direction)
+    personnage->position.x = personnage->position.x + 4;
+}
+void seDeplacerGauche(Personnage *personnage)
+{
+    personnage->position.x = personnage->position.x - 4;
+}
+void seDeplacerSaut(Personnage *personnage,int nb)
+{   
+    if(nb <personnage->jumptime)
     {
-    case 1:
-        personnage->position.x = personnage->position.x + 4;
-        break;
-    case 2:
-        personnage->position.x = personnage->position.x - 4;
-        break;
-    
-    default:
-        break;
+        personnage->position.y--;
     }
-    
-
 
 }
