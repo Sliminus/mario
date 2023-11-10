@@ -11,7 +11,7 @@ void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
     mario->image[4]=loadImage("img/Mario5.png",renderer);
     mario->image[5]=loadImage("img/Mario6.png",renderer);
     mario->position.x=0;
-    mario->position.y=960;
+    mario->position.y=0;
     mario->position.w=WIDTH_MARIO;
     mario->position.h=HEIGHT_MARIO;
     mario->jump=0;
@@ -25,22 +25,6 @@ void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
 }
 void afficherMario(Personnage* mario,SDL_Renderer* renderer)
 {
-    SDL_Event event;
-    if(event.type == SDL_KEYDOWN)
-    {
-        if(event.key.keysym.scancode == SDLK_LEFT)
-        {
-            int direction=2;
-        }
-    }
-    
-    if(event.type == SDL_KEYDOWN)
-    {
-        if(event.key.keysym.scancode == SDLK_RIGHT)
-        {
-            int direction=1;
-        }
-    }
     SDL_Rect srcrect = {0,0,WIDTH_MARIO,HEIGHT_MARIO};
     if(mario->direction==0)
     {
@@ -56,6 +40,12 @@ void afficherMario(Personnage* mario,SDL_Renderer* renderer)
     }
 }
 void freePersonnage(Personnage* mario) {
+    SDL_DestroyTexture(mario->image[0]);
+    SDL_DestroyTexture(mario->image[1]);
+    SDL_DestroyTexture(mario->image[2]);
+    SDL_DestroyTexture(mario->image[3]);
+    SDL_DestroyTexture(mario->image[4]);
+    SDL_DestroyTexture(mario->image[5]);
     free(mario);
 }
 

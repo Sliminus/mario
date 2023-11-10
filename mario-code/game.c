@@ -27,17 +27,15 @@ int jouer(SDL_Renderer *renderer) {
             {
                 if(event.key.keysym.scancode == SDLK_LEFT)
                 {
+                    SDL_Log("gauche");
                   mario->direction=2; 
                 }
-            }
-            if(event.type == SDL_KEYDOWN)
-            {
-                if(event.key.keysym.scancode == SDLK_RIGHT)
+                else if(event.key.keysym.scancode == SDLK_RIGHT)
                 {
+                    SDL_Log("droite");
                   mario->direction=1;
                 }
             }
-
             if(event.type == SDL_QUIT)
             {
                 quit = 0;
@@ -50,4 +48,6 @@ int jouer(SDL_Renderer *renderer) {
     }
     LibererMap(map,sprites);
     freePersonnage(mario);
+
+    return quit;
 }
