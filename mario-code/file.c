@@ -46,6 +46,9 @@ void loadSprites(SDL_Renderer *renderer, Sprites* sprites)
         sprites[i].sprite=loadImage(png[i],renderer);
         sprites[i].traverser=trav[i];
     }
+    //provisoire
+    sprites[10].sprite=loadImage("img/goomba1.png",renderer);
+    sprites[10].traverser=1;
 
 }
 
@@ -77,7 +80,6 @@ void CreerMap(Map* map)
         for(int j=0;j<var1;j++)
         {
             fscanf(fd,"%d",&(map->LoadedMap[i][j]));
-            SDL_Log("i=%d j=%d %d",i,j,map->LoadedMap[i][j]);
         }
     }
     map->xscroll=0;
@@ -105,7 +107,7 @@ void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer)
 void LibererMap(Map* map, Sprites* sprites)
 {
     free(sprites);
-    for(int i=0;i<(map->width);i++)
+    for(int i=0;i<(map->height);i++)
     {
         free(map->LoadedMap[i]);
     }
