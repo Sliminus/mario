@@ -46,6 +46,7 @@ void freePersonnage(Personnage* mario) {
     SDL_DestroyTexture(mario->image[3]);
     SDL_DestroyTexture(mario->image[4]);
     SDL_DestroyTexture(mario->image[5]);
+    free(mario->image);
     free(mario);
 }
 
