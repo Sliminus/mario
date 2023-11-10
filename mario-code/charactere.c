@@ -36,7 +36,7 @@ void afficherMario(Personnage* mario,SDL_Renderer* renderer)
     }
        if(mario->direction==2)
     {
-        SDL_RenderCopy(renderer,mario->image[5],&srcrect,&mario->position);
+        SDL_RenderCopy(renderer,mario->image[4],&srcrect,&mario->position);
     }
 }
 void freePersonnage(Personnage* mario) {

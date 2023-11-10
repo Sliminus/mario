@@ -25,14 +25,12 @@ int jouer(SDL_Renderer *renderer) {
         {
             if(event.type == SDL_KEYDOWN)
             {
-                if(event.key.keysym.scancode == SDLK_LEFT)
+                if(event.key.keysym.sym == SDLK_LEFT)
                 {
-                    SDL_Log("gauche");
                   mario->direction=2; 
                 }
-                else if(event.key.keysym.scancode == SDLK_RIGHT)
+                else if(event.key.keysym.sym == SDLK_RIGHT)
                 {
-                    SDL_Log("droite");
                   mario->direction=1;
                 }
             }
