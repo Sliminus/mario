@@ -54,7 +54,7 @@ void CreerMap(Map* map)
 {
     char nom[25];
     FILE* fd=NULL;
-    fd = fopen("level/niveau0.lvl","r");
+    fd = fopen("level/niveau1.lvl","r");
     if(fd==NULL)
     {
         perror("fichier niveau 0 erreur :");
@@ -66,15 +66,15 @@ void CreerMap(Map* map)
     map->width=var1;
     map->height=var2;
 
-    map->LoadedMap=malloc(sizeof(int*)*var1);
-    for(int i=0;i<var1;i++)
+    map->LoadedMap=malloc(sizeof(int*)*var2);
+    for(int i=0;i<var2;i++)
     {
-        map->LoadedMap[i]=malloc(sizeof(int*)*var2);
+        map->LoadedMap[i]=malloc(sizeof(int*)*var1);
     }
 
-    for(int i=0;i<var1;i++)
+    for(int i=0;i<var2;i++)
     {
-        for(int j=0;j<var2;j++)
+        for(int j=0;j<var1;j++)
         {
             fscanf(fd,"%d",&(map->LoadedMap[i][j]));
             SDL_Log("i=%d j=%d %d",i,j,map->LoadedMap[i][j]);
