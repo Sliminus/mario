@@ -2,8 +2,19 @@
 
 void seDeplacer(Personnage *personnage)
 {
-    if(personnage->direction == 1)
+    switch (personnage->direction)
     {
-        personnage->position.x++;
+    case 1:
+        personnage->position.x = personnage->position.x + 4;
+        break;
+    case 2:
+        personnage->position.x = personnage->position.x - 4;
+        break;
+    
+    default:
+        break;
     }
+    
+
+
 }
