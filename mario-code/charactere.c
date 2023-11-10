@@ -11,7 +11,7 @@ void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
     mario->image[4]=loadImage("img/Mario5.png",renderer);
     mario->image[5]=loadImage("img/Mario6.png",renderer);
     mario->position.x=0;
-    mario->position.y=0;
+    mario->position.y=960;
     mario->position.w=WIDTH_MARIO;
     mario->position.h=HEIGHT_MARIO;
     mario->jump=0;
