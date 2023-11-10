@@ -46,6 +46,9 @@ void loadSprites(SDL_Renderer *renderer, Sprites* sprites)
         sprites[i].sprite=loadImage(png[i],renderer);
         sprites[i].traverser=trav[i];
     }
+    //provisoire
+    sprites[10].sprite=loadImage("img/goomba1.png",renderer);
+    sprites[10].traverser=1;
 
 }
 
@@ -54,7 +57,7 @@ void CreerMap(Map* map)
 {
     char nom[25];
     FILE* fd=NULL;
-    fd = fopen("level/niveau0.lvl","r");
+    fd = fopen("level/niveau1.lvl","r");
     if(fd==NULL)
     {
         perror("fichier niveau 0 erreur :");
@@ -66,15 +69,15 @@ void CreerMap(Map* map)
     map->width=var1;
     map->height=var2;
 
-    map->LoadedMap=malloc(sizeof(int*)*var1);
-    for(int i=0;i<var1;i++)
+    map->LoadedMap=malloc(sizeof(int*)*var2);
+    for(int i=0;i<var2;i++)
     {
-        map->LoadedMap[i]=malloc(sizeof(int*)*var2);
+        map->LoadedMap[i]=malloc(sizeof(int*)*var1);
     }
 
-    for(int i=0;i<var1;i++)
+    for(int i=0;i<var2;i++)
     {
-        for(int j=0;j<var2;j++)
+        for(int j=0;j<var1;j++)
         {
             fscanf(fd,"%d",&(map->LoadedMap[i][j]));
         }
@@ -93,7 +96,7 @@ void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer)
         for(int j=0;j<30;j++)
         {
             SDL_Rect srcrect = {0,0,Size_Sprite,Size_Sprite};
-            SDL_Rect dstrect = {Size_Sprite*j,Size_Sprite*i,Size_Sprite,Size_Sprite};
+            SDL_Rect dstrect = {Size_Sprite_dest*j,Size_Sprite_dest*i,Size_Sprite_dest,Size_Sprite_dest};
             SDL_RenderCopy(renderer,sprites[map->LoadedMap[i+map->xscroll][j+map->yscroll]].sprite,&srcrect,&dstrect);
         }
     }
@@ -104,7 +107,7 @@ void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer)
 void LibererMap(Map* map, Sprites* sprites)
 {
     free(sprites);
-    for(int i=0;i<(map->width);i++)
+    for(int i=0;i<(map->height);i++)
     {
         free(map->LoadedMap[i]);
     }

@@ -25,6 +25,22 @@ void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
 }
 void afficherMario(Personnage* mario,SDL_Renderer* renderer)
 {
+    SDL_Event event;
+    if(event.type == SDL_KEYDOWN)
+    {
+        if(event.key.keysym.scancode == SDLK_LEFT)
+        {
+            int direction=2;
+        }
+    }
+    
+    if(event.type == SDL_KEYDOWN)
+    {
+        if(event.key.keysym.scancode == SDLK_RIGHT)
+        {
+            int direction=1;
+        }
+    }
     SDL_Rect srcrect = {0,0,WIDTH_MARIO,HEIGHT_MARIO};
     if(mario->direction==0)
     {
