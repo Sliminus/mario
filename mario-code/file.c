@@ -84,7 +84,7 @@ void CreerMap(Map* map)
     }
     map->xscroll=0;
     map->yscroll=0;
-    free(fd);
+    fclose(fd);
 
 }
 
