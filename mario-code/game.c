@@ -28,10 +28,12 @@ int jouer(SDL_Renderer *renderer) {
                 if(event.key.keysym.sym == SDLK_LEFT)
                 {
                   mario->direction=2;
+                  mario->jump=0;
                 }
                 if(event.key.keysym.sym == SDLK_RIGHT)
                 {
                   mario->direction=1;
+                  mario->jump=0;
                 }
                 if(event.key.keysym.sym == SDLK_UP)
                 {

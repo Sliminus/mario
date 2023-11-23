@@ -17,7 +17,8 @@ void seDeplacer(Personnage *personnage,int *nb)
             personnage->position.y++;
         }
         *nb = 0;
-    }else if(personnage->jump == 1)
+    }
+    if(personnage->jump == 1)
     {
         personnage->position.y--;
     }
