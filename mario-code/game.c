@@ -6,7 +6,7 @@
 
 int jouer(SDL_Renderer *renderer) {
     SDL_Event event;
-    int quit = 1,nb = 0;
+    int quit = 1,nb_saut = 0;
 
     SDL_SetRenderDrawColor(renderer, 255,255,255,255);
     Personnage *mario = malloc(sizeof(Personnage));
@@ -27,28 +27,40 @@ int jouer(SDL_Renderer *renderer) {
             {
                 if(event.key.keysym.sym == SDLK_LEFT)
                 {
-                  mario->direction=2; 
-                  seDeplacerGauche(mario);
+                  mario->direction=2;
                 }
                 if(event.key.keysym.sym == SDLK_RIGHT)
                 {
                   mario->direction=1;
-                  seDeplacerDroite(mario);
                 }
                 if(event.key.keysym.sym == SDLK_UP)
                 {
+                  nb_saut++;
                   mario->jump=1;
-                  seDeplacerSaut(mario,nb);
                 }
 
             }
+            
+
+            if(event.type == SDL_KEYUP)
+            {
+                if(event.key.keysym.sym == SDLK_LEFT || event.key.keysym.sym == SDLK_RIGHT)
+                {
+                  mario->direction=0;
+                }
+                if(event.key.keysym.sym == SDLK_UP)
+                {
+                  mario->jump=0;
+                }
+            }
+
             if(event.type == SDL_QUIT)
             {
                 quit = 0;
                 break;
             }
+            seDeplacer(mario,&nb_saut);
         } 
-        nb = 0;
         AfficherMap(map,sprites,renderer);
         afficherMario(mario,renderer); 
         SDL_RenderPresent(renderer);

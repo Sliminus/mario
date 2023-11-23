@@ -15,7 +15,7 @@ void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
     mario->position.w=WIDTH_MARIO;
     mario->position.h=HEIGHT_MARIO;
     mario->jump=0;
-    mario->jumptime=20;
+    mario->jumptime=70;
     mario->gravite=0;
     mario->direction=0;
     mario->dernieredirection=0;
