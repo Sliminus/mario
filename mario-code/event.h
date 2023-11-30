@@ -9,5 +9,6 @@ et si le niveau est fini (win et loose).
     #include "file.h"
     #include "charactere.h"
 
-    void seDeplacer(Personnage *personnage,int *nb);
+    void seDeplacer(Personnage *personnage);
+    void scroll(Personnage *personnage,Map *map);
 #endif

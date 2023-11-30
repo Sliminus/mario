@@ -97,7 +97,7 @@ void AfficherMap(Map* map, Sprites* sprites,SDL_Renderer *renderer)
         {
             SDL_Rect srcrect = {0,0,Size_Sprite,Size_Sprite};
             SDL_Rect dstrect = {Size_Sprite_dest*j,Size_Sprite_dest*i,Size_Sprite_dest,Size_Sprite_dest};
-            SDL_RenderCopy(renderer,sprites[map->LoadedMap[i+map->xscroll][j+map->yscroll]].sprite,&srcrect,&dstrect);
+            SDL_RenderCopy(renderer,sprites[map->LoadedMap[i+map->yscroll][j+map->xscroll]].sprite,&srcrect,&dstrect);
         }
     }
 }

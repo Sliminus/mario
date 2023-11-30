@@ -15,7 +15,7 @@ void creerPersonnage(Personnage* mario,Map* map,SDL_Renderer* renderer) {
     mario->position.w=WIDTH_MARIO;
     mario->position.h=HEIGHT_MARIO;
     mario->jump=0;
-    mario->jumptime=70;
+    mario->jumptime=0;
     mario->gravite=0;
     mario->direction=0;
     mario->dernieredirection=0;
@@ -30,17 +30,20 @@ void afficherMario(Personnage* mario,SDL_Renderer* renderer)
     {
         SDL_RenderCopy(renderer,mario->image[0],&srcrect,&mario->position);
     }
-       if(mario->direction==1)
+    if(mario->direction==1)
     {
         SDL_RenderCopy(renderer,mario->image[1],&srcrect,&mario->position);
     }
-       if(mario->direction==2)
+    if(mario->direction==2)
     {
         SDL_RenderCopy(renderer,mario->image[4],&srcrect,&mario->position);
     }
-    if(mario->jump==1)
+    if(mario->jump==1 && mario->direction==2)
     {
         SDL_RenderCopy(renderer,mario->image[5],&srcrect,&mario->position);
+    }else if(mario->jump==1)
+    {
+        SDL_RenderCopy(renderer,mario->image[2],&srcrect,&mario->position);
     }
 }
 void freePersonnage(Personnage* mario) {
